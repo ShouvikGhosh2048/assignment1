@@ -40,8 +40,8 @@ app.get('/api/:letter', async (req, res) => {
 })
 
 mongoose.connect(process.env.DB_URL, async () => {
-    app.listen(5000, () => {
-        console.log('Listening on port 5000')
+    app.listen(process.env.PORT || 5000, () => {
+        console.log(`Listening on port ${process.env.PORT || 5000}`)
     })
 }, (err) => {
     console.log(err)
